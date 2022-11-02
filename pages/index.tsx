@@ -1,18 +1,35 @@
-import { Button } from "@nextui-org/react";
-import { NextPage } from "next";
-import { Layout } from '../components/layouts';
+import { NextPage, GetStaticProps } from "next";
+import { Layout } from "../components/layouts";
 
 //title: listado de pokemons
 
-
-
-const HomePage: NextPage = () => {
+const HomePage: NextPage = (props) => {
+  console.log({props});
   return (
-    <Layout title='Listado de Pokemons'>
-      <Button color="gradient">
-        Hola Mundo
-      </Button>
+    <Layout title="Listado de Pokemons">
+      <ul>
+        <li>Pokemon</li>
+        <li>Pokemon</li>
+        <li>Pokemon</li>
+        <li>Pokemon</li>
+        <li>Pokemon</li>
+        <li>Pokemon</li>
+        <li>Pokemon</li>
+        <li>Pokemon</li>
+      </ul>
     </Layout>
-  )
-}
+  );
+};
+
+
+
+export const getStaticProps: GetStaticProps = async (ctx) => {
+  console.log("Hola mundo");
+  return {
+    props: {
+    name: 'Yair'
+    },
+  };
+};
+
 export default HomePage;
